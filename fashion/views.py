@@ -10,6 +10,7 @@ def index(request):
     fp1.product_title= "sasti hoodie"
     fp1.product_desc= "very comfortable and pretty sasti hoodie"
     fp1.product_price= "100.23"
+    fp1.special_offer=True
     
     fp2= FeaturedProduct()
     fp2.img= "bhootbangla.jpg"

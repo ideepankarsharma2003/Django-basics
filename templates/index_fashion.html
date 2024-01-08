@@ -328,6 +328,9 @@ https://www.tooplate.com/view/2127-little-fashion
 
                                 <div class="product-top d-flex">
                                     <span class="product-alert">{{fp.product_alert}}</span>
+                                    {% if fp.special_offer %}
+                                    <span class="product-alert"><b>Special Offer !!!</b></span>
+                                    {% endif %}
 
                                     <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
                                 </div>

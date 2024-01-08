@@ -40,3 +40,4 @@ class FeaturedProduct:
     product_details_html: str= ""
     product_desc: str= ""
     product_price: float= 0.0
+    special_offer:bool= False
