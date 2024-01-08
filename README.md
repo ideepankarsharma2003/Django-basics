@@ -132,31 +132,26 @@ def index(request):
 And finally you load that on [index_fashion.html](templates/index_fashion.html) as:
 ```html
 
-                        <div class="col-lg-4 col-12 mb-3">
-                            <div class="product-thumb">
-                                <a href="product-detail.html">
-                                    <img src="{% static 'images/product/jordan-nix-CkCUvwMXAac-unsplash.jpeg' %}" class="img-fluid product-image" alt="">
-                                </a>
-
-                                <div class="product-top d-flex">
-                                    <span class="product-alert">{{fp1.product_alert}}</span>
-
-                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-                                </div>
-
-                                <div class="product-info d-flex">
-                                    <div>
-                                        <h5 class="product-title mb-0">
-                                            <a href="product-detail.html" class="product-title-link">{{fp1.product_title}}</a>
-                                        </h5>
-
-                                        <p class="product-p">{{fp1.product_desc}}</p>
-                                    </div>
-
-                                    <small class="product-price text-muted ms-auto mt-auto mb-5">${{fp1.product_price}}</small>
-                                </div>
-                            </div>
-                        </div>
+<div class="col-lg-4 col-12 mb-3">
+    <div class="product-thumb">
+        <a href="product-detail.html">
+            <img src="{% static 'images/product/jordan-nix-CkCUvwMXAac-unsplash.jpeg' %}" class="img-fluid product-image" alt="">
+        </a>
+        <div class="product-top d-flex">
+            <span class="product-alert">{{fp1.product_alert}}</span>
+            <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
+        </div>
+        <div class="product-info d-flex">
+            <div>
+                <h5 class="product-title mb-0">
+                    <a href="product-detail.html" class="product-title-link">{{fp1.product_title}}</a>
+                </h5>
+                <p class="product-p">{{fp1.product_desc}}</p>
+            </div>
+            <small class="product-price text-muted ms-auto mt-auto mb-5">${{fp1.product_price}}</small>
+        </div>
+    </div>
+</div>
 ```
 
 Also instead of doing this all manually, you can have a jinja loop for automatically populating every product:
@@ -196,39 +191,32 @@ def index(request):
 and then jinja loop would look like:
 ```html
 
-                    {% static "images" as base_img_url %}
-                    <!-- specifying that base image url is the path to find images -->
-
-                        <!-- Featured Products Loop -->
-
-                        {%for fp in fashion_products%}
-                        <div class="col-lg-4 col-12 mb-3">
-                            <div class="product-thumb">
-                                <a href="product-detail.html">
-                                    <!-- <img src="{% static 'images/product/jordan-nix-CkCUvwMXAac-unsplash.jpeg' %}" class="img-fluid product-image" alt=""> -->
-                                    <img src="{{base_img_url}}/{{fp.img}}" class="img-fluid product-image" alt="">
-                                </a>
-
-                                <div class="product-top d-flex">
-                                    <span class="product-alert">{{fp.product_alert}}</span>
-
-                                    <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
-                                </div>
-
-                                <div class="product-info d-flex">
-                                    <div>
-                                        <h5 class="product-title mb-0">
-                                            <a href="product-detail.html" class="product-title-link">{{fp.product_title}}</a>
-                                        </h5>
-
-                                        <p class="product-p">{{fp.product_desc}}</p>
-                                    </div>
-
-                                    <small class="product-price text-muted ms-auto mt-auto mb-5">${{fp.product_price}}</small>
-                                </div>
-                            </div>
-                        </div>
-                        {% endfor %}
+{% static "images" as base_img_url %}
+<!-- specifying that base image url is the path to find images -->
+    <!-- Featured Products Loop -->
+    {%for fp in fashion_products%}
+    <div class="col-lg-4 col-12 mb-3">
+        <div class="product-thumb">
+            <a href="product-detail.html">
+                <!-- <img src="{% static 'images/product/jordan-nix-CkCUvwMXAac-unsplash.jpeg' %}" class="img-fluid product-image" alt=""> -->
+                <img src="{{base_img_url}}/{{fp.img}}" class="img-fluid product-image" alt="">
+            </a>
+            <div class="product-top d-flex">
+                <span class="product-alert">{{fp.product_alert}}</span>
+                <a href="#" class="bi-heart-fill product-icon ms-auto"></a>
+            </div>
+            <div class="product-info d-flex">
+                <div>
+                    <h5 class="product-title mb-0">
+                        <a href="product-detail.html" class="product-title-link">{{fp.product_title}}</a>
+                    </h5>
+                    <p class="product-p">{{fp.product_desc}}</p>
+                </div>
+                <small class="product-price text-muted ms-auto mt-auto mb-5">${{fp.product_price}}</small>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
 ```
-Voila ! now it should appear like : 
+Voila ! now it should appear like : <br>
 ![image](https://github.com/ideepankarsharma2003/Django-basics/assets/74599435/40169157-a33f-4617-ad50-21c7d1a6bab8)
