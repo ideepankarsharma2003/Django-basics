@@ -219,4 +219,5 @@ and then jinja loop would look like:
     {% endfor %}
 ```
 Voila ! now it should appear like : <br>
-![image](https://github.com/ideepankarsharma2003/Django-basics/assets/74599435/40169157-a33f-4617-ad50-21c7d1a6bab8)
+![image](https://github.com/ideepankarsharma2003/Django-basics/assets/74599435/f8bc04b2-3980-478a-b1c3-d452bbb3ce7c)
+
