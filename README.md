@@ -230,3 +230,5 @@ and then jinja loop would look like:
                         </div>
                         {% endfor %}
 ```
+Voila ! now it should appear like : 
+![image](https://github.com/ideepankarsharma2003/Django-basics/assets/74599435/40169157-a33f-4617-ad50-21c7d1a6bab8)
