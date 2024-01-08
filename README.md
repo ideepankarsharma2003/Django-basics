@@ -1,5 +1,8 @@
 # Getting Started with Django
 
+
+![image](https://github.com/ideepankarsharma2003/Django-basics/assets/74599435/d884aa79-a77d-49ea-8ad0-cbe39404bc75)
+
 - Install django
 ```bash
 pip install django
